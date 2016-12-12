@@ -1,0 +1,94 @@
+body{
+	background-color:#ececf8;
+}
+
+.post-auth {
+	display:none;
+	
+}
+
+.yt-player2{
+	display:none;
+}
+
+#buttons{
+	float:center;
+	border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #d9d9d9;
+    font-size: 12px;
+
+}
+
+#search-button{
+	background-color: #cc99ff; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+#search-button2{
+	background-color: #cc99ff; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+#query{
+	font-size: 12px;
+	padding: 4px 32px;
+}
+
+#query2{
+	font-size: 12px;
+	padding: 4px 32px;
+}
+
+#videos{
+	
+}
+
+#yt-player{
+	position: absolute;
+    left: 25%;
+    top: 25%;
+}
+
+#videoSelect{
+	float:center;
+	background-color: #cc99ff; 
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    
+}
+
+#songSelect{
+	float:center;
+	background-color: #cc99ff; 
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    
+}
+
+

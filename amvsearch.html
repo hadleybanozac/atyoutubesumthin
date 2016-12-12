@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Search</title>
+    <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="search.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"> </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+   
+
+    <div id="login-container" class="pre-auth">
+     This application requires access to your YouTube account.
+      Please <a href="#" id="login-link">authorize</a> to continue.
+      If you have already authorized, just wait bruh.
+      <br>
+      <img src="banozaclogo.png">
+    </div>
+
+
+    <div class="post-auth">
+      <div id="buttons" class="post-auth">
+        <label> <input id="query" value='cats' type="text"/><button id="search-button"  disabled onclick="searchShow()">Search Show</button></label>
+        <label> <input id="query2" value='woah' type="text"/><button id="search-button2"  disabled onclick="searchSong()">Search Song</button></label>
+      </div>
+      <div id="videos">
+        <div id="yt-player"></div>
+
+        <div id="yt-player2" style="display:none"></div>
+        <br>
+        <select id="videoSelect">
+        <!-- option tags here -->
+        </select> 
+        <select id="songSelect">
+        <!-- option tags here -->
+        </select> 
+      </div>
+    </div>
+
+
+    <script>
+   
+      var player, player2; 
+
+      var tag = document.createElement('script');
+      tag.src = "http://www.youtube.com/iframe_api";
+      
+      var firstST = document.getElementsByTagName('script')[0];
+      firstST.parentNode.insertBefore( tag, firstST );
+      
+      function onYouTubeIframeAPIReady(){
+
+        player = new YT.Player('yt-player',{
+          height: '315',
+          width: '560',
+          videoId: 'x',
+          playerVars: { 'autoplay':1, 'controls':1 }
+        });
+        
+
+        player2 = new YT.Player('yt-player2',{
+          height: '315',
+          width: '560',
+          videoId: 'x',
+          playerVars: { 'autoplay':1, 'controls':0 }
+        });
+
+        
+      }
+
+      function onPlayerReady(event) {
+        event.target.setVolume(5);
+      }
+      
+    </script>
+
+
+
+  </body>
+</html>
+            
+
+
+
+
+
+            
