@@ -6,6 +6,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="auth.js"></script>
     <script src="search.js"></script>
+     <script src="controls.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"> </script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
@@ -15,31 +16,61 @@
     <div id="login-container" class="pre-auth">
      This application requires access to your YouTube account.
       Please <a href="#" id="login-link">authorize</a> to continue.
-      If you have already authorized, just wait bruh.
+      If you have already authorized, wait for the page to finish loading. Refresh if necessary.
+      <br>
+      <a href="authorizationpolicy.html">Authorization Policy</a>
       <br>
       <img src="banozaclogo.png">
+      <br>
+      Background model by tehkawaiiepicness
     </div>
 
 
     <div class="post-auth">
       <div id="buttons" class="post-auth">
-        <label> <input id="query" value='cats' type="text"/><button id="search-button"  disabled onclick="searchShow()">Search Show</button></label>
-        <label> <input id="query2" value='woah' type="text"/><button id="search-button2"  disabled onclick="searchSong()">Search Song</button></label>
-      </div>
-      <div id="videos">
-        <div id="yt-player"></div>
+        <img src="title.gif"><br>
+        <label> <input id="query" value='ur fave animoo' type="text"/><button id="search-button"  disabled onclick="searchShow()">Search Show</button></label>
+        <label> <input id="query2" value='level 12 emo tune' type="text"/><button id="search-button2"  disabled onclick="searchSong()">Search Song</button></label>
 
-        <div id="yt-player2" style="display:none"></div>
-        <br>
+        <!-- <button id="mute-toggle">mute</button> -->
+
+      </div>
+
+       <div id="selections">
         <select id="videoSelect">
         <!-- option tags here -->
         </select> 
         <select id="songSelect">
         <!-- option tags here -->
         </select> 
+        <br>
+        <br>
+        <br>
+        <button id="skip1">✦</button>
+        <button id="skip2">✧</button>
+        <button id="skip3">✦</button>
+        <button id="skip4">✧</button>
+        <button id="skip5">✦</button>
+
       </div>
+      <div id="videos">
+        <div id="yt-player">
+          <script>
+            function mute(){
+              player.mute();
+            }
+          </script>
+        </div>
+
+        <div id="yt-player2" style="display:none"></div>
+        <br>
+       
+      </div>
+
+      
     </div>
 
+   
 
     <script>
    
@@ -57,9 +88,17 @@
           height: '315',
           width: '560',
           videoId: 'x',
-          playerVars: { 'autoplay':1, 'controls':1 }
-        });
-        
+          playerVars: {
+            'autoplay': 1,
+            'controls': 0,
+            'loop': 1,
+            'rel':0
+        },
+
+        events: {
+           'onReady': onPlayerReady
+        }
+    });
 
         player2 = new YT.Player('yt-player2',{
           height: '315',
@@ -67,17 +106,59 @@
           videoId: 'x',
           playerVars: { 'autoplay':1, 'controls':0 }
         });
-
+        function onPlayerReady(event) {
+            event.target.playVideo();
+            player.mute();
+        }
         
       }
+       
+      var videoSelect = document.querySelector('#videoSelect');
+      
+      videoSelect.onchange = function(){
+        player.loadVideoById(this.value);
+      }
 
-      function onPlayerReady(event) {
-        event.target.setVolume(5);
+      var songSelect = document.querySelector('#songSelect');
+
+      songSelect.onchange = function(){
+        player.loadVideoById(this.value);
       }
       
+      var skip1 = document.getElementById('skip1');
+
+      skip1.onclick = function(){
+        player.seekTo(30);
+      }
+
+      var skip2 = document.getElementById('skip2');
+
+      skip2.onclick = function(){
+        player.seekTo(60);
+      }
+
+      var skip3 = document.getElementById('skip3');
+
+      skip3.onclick = function(){
+        player.seekTo(90);
+      }
+
+      var skip4 = document.getElementById('skip4');
+
+      skip4.onclick = function(){
+        player.seekTo(120);
+      }
+
+      var skip5 = document.getElementById('skip5');
+
+      skip5.onclick = function(){
+        player.seekTo(150);
+      }
+
+
+
     </script>
-
-
+  
 
   </body>
 </html>

@@ -1,5 +1,12 @@
 body{
-	background-color:#ececf8;
+	/*background-color:#ececf8;*/
+	background-image: url("amvbackground.png");
+	background-size: 100%;
+}
+
+#login-container{
+    text-align: center;
+    margin:auto;
 }
 
 .post-auth {
@@ -12,7 +19,6 @@ body{
 }
 
 #buttons{
-	float:center;
 	border: none;
     color: white;
     padding: 15px 32px;
@@ -20,11 +26,13 @@ body{
     text-decoration: none;
     background-color: #d9d9d9;
     font-size: 12px;
+    top:0px;
+    position: block;
 
 }
 
 #search-button{
-	background-color: #cc99ff; /* Green */
+	background-color: #cc99ff; 
     border: none;
     color: white;
     padding: 5px 32px;
@@ -60,9 +68,8 @@ body{
 }
 
 #yt-player{
-	position: absolute;
-    left: 25%;
-    top: 25%;
+	position: relative;
+    left: 27%;
 }
 
 #videoSelect{
@@ -73,7 +80,7 @@ body{
     padding: 5px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 12px;
     
 }
@@ -86,9 +93,17 @@ body{
     padding: 5px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 12px;
     
 }
 
-
+#selections{
+    left:50%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
